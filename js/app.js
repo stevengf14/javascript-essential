@@ -1,7 +1,8 @@
 "use strict"
 
+var drink = "water";
+var food = "pizza";
+var instruction = "The food is 'pizza'";
 var age = 27;
-var amount = "20";
-var newValue = Number(amount);
-parseInt();
-parseFloat();
+
+var ageTxt = String(age);
