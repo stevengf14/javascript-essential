@@ -1,9 +1,5 @@
 "use strict"
 
-var date = new Date();
-date.getDay();
-date.getMonth();
-date.getFullYear();
-
-date.setDate(5);
-date.setDate(10);
+var symbol1 = Symbol();
+var symbol2 = Symbol();
+var environment = Symbol('dev');
