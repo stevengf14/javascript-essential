@@ -1,1 +1,2 @@
-alert('Hello from external file');
+// alert('Hello from external file');
+console.log('Hello console');
