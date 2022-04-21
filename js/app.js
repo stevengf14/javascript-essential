@@ -1,9 +1,16 @@
 "use strict"
-// alert('Hello from external file');
-console.log('Hello console');
 
-var x;
-x = "3.1416";
+var myName = 'Steven';
+console.log(myName);
+const pi = 3.1416;
 
-// var public = "hello";
-var publicData = "hello";
+function hello() {
+    let myName = 'Ohter name';
+    console.log(myName);
+    let myAge = 27;
+    console.log(myAge);
+    // pi = 15
+    console.log(pi);
+}
+
+hello();
