@@ -1,4 +1,9 @@
 "use strict"
 
-var active = false;
-var state = Boolean(10 > 9);
+var date = new Date();
+date.getDay();
+date.getMonth();
+date.getFullYear();
+
+date.setDate(5);
+date.setDate(10);
