@@ -91,3 +91,30 @@ console.log(dataA + ' > ' + 10 + ' || ' + dataB + ' > ' + 10 + ' = ' + or);
 // NOT 
 var not = !(dataA > 10);
 console.log('!(' + dataA + ' > ' + 10 + ') = ' + not);
+
+// *******************************
+// **** Assignment Operators *****
+
+// Simple
+var equal = dataA;
+console.log("Simple assignation: " + equal);
+
+// Add and Assign
+var addEqual = 10;
+addEqual += dataA;
+console.log("+= Assignation: " + addEqual);
+
+// Substract and Assign
+var substractEqual = 10;
+substractEqual -= dataA;
+console.log("-= Assignation: " + substractEqual);
+
+// Multiplication and Assign
+var multiplicationEqual = 10;
+multiplicationEqual *= dataA;
+console.log("*= Assignation: " + multiplicationEqual);
+
+// Divition and Assign
+var divitionEqual = 10;
+divitionEqual /= dataA;
+console.log("/= Assignation: " + divitionEqual);
