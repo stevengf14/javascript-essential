@@ -148,4 +148,11 @@ console.log('Concat ' + data1 + ' and ' + data2 + ' = ' + numAsTextConcat);
 
 // Concat Text and Number
 var textNumConcat = dataA + data2;
-console.log('Concat ' + dataA + ' and ' + data2 + ' = ' + textNumConcat); 
+console.log('Concat ' + dataA + ' and ' + data2 + ' = ' + textNumConcat);
+
+// ******************************
+// *** Conditional Operators ****
+
+// Condition = ? TRUE : FALSE
+var result = dataA > dataB ? "It's greater than" : "It's not greater than";
+console.log('The conditional result: ' + result)
