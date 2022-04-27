@@ -118,3 +118,9 @@ console.log("*= Assignation: " + multiplicationEqual);
 var divitionEqual = 10;
 divitionEqual /= dataA;
 console.log("/= Assignation: " + divitionEqual);
+
+// *******************************
+// ***** Negative Operators ******
+
+var dataC = -dataA;
+console.log('data A: ' + dataA + ', and his negative: ' + dataC);
