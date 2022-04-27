@@ -124,3 +124,28 @@ console.log("/= Assignation: " + divitionEqual);
 
 var dataC = -dataA;
 console.log('data A: ' + dataA + ', and his negative: ' + dataC);
+
+// ********************************
+// *** Concatenation Operators ****
+
+var data1 = '1';
+var data2 = '2';
+var name = 'Steven';
+var lastName = 'Guamán';
+
+// Number Concatenation
+
+var numberConcat = dataA + dataB;
+console.log('Concat ' + dataA + ' and ' + dataB + ' = ' + numberConcat);
+
+// String Concatenation
+var stringConcat = name + " " + lastName;
+console.log('Concat ' + name + ' and ' + lastName + ' = ' + stringConcat);
+
+// Concat Number as Text
+var numAsTextConcat = data1 + data2;
+console.log('Concat ' + data1 + ' and ' + data2 + ' = ' + numAsTextConcat);
+
+// Concat Text and Number
+var textNumConcat = dataA + data2;
+console.log('Concat ' + dataA + ' and ' + data2 + ' = ' + textNumConcat); 
