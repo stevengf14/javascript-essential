@@ -155,4 +155,24 @@ console.log('Concat ' + dataA + ' and ' + data2 + ' = ' + textNumConcat);
 
 // Condition = ? TRUE : FALSE
 var result = dataA > dataB ? "It's greater than" : "It's not greater than";
-console.log('The conditional result: ' + result)
+console.log('The conditional result: ' + result);
+
+// ******************************
+// **** Data Type Operators *****
+
+var active = true;
+
+console.log(dataA + ' is ' + typeof (dataA));
+console.log(name + ' is ' + typeof (name));
+console.log(active + ' is ' + typeof (active));
+console.log(person + ' is ' + typeof (person));
+console.log(person.email + ' is ' + typeof (person.email));
+
+
+var a, b, c;
+a = b = c = 5;
+a += b *= c /= 5;
+
+console.log("a = " + a);
+console.log("b = " + b);
+console.log("c = " + c);
