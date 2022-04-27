@@ -50,3 +50,29 @@ var decrement = dataA;
 decrement--;
 console.log('The decrement -- of ' + dataA + ' = ' + decrement);
 
+// ******************************
+// **** Relational Operators ****
+
+// Greater than >
+var greaterThan = dataA > dataB;
+console.log(dataA + ' > ' + dataB + ' = ' + greaterThan);
+
+// Less than <
+var lessThan = dataA < dataB;
+console.log(dataA + ' < ' + dataB + ' = ' + lessThan);
+
+// Greater or Equal than >=
+var greaterOrEqual = dataA >= dataB;
+console.log(dataA + ' >= ' + dataB + ' = ' + greaterOrEqual);
+
+// Less or Equal than <=
+var lessOrEqual = dataA <= dataB;
+console.log(dataA + ' <= ' + dataB + ' = ' + lessOrEqual);
+
+// Equal than ==
+var equal = dataA == dataB;
+console.log(dataA + ' == ' + dataB + ' = ' + equal);
+
+// Not Equal !=
+var notEqual = dataA != dataB;
+console.log(dataA + ' != ' + dataB + ' = ' + notEqual);
