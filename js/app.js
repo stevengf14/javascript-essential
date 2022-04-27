@@ -76,3 +76,18 @@ console.log(dataA + ' == ' + dataB + ' = ' + equal);
 // Not Equal !=
 var notEqual = dataA != dataB;
 console.log(dataA + ' != ' + dataB + ' = ' + notEqual);
+
+// ******************************
+// ***** Logical Operators ******
+
+// AND - &&
+var and = dataA > 10 && dataB > 10;
+console.log(dataA + ' > ' + 10 + ' && ' + dataB + ' > ' + 10 + ' = ' + and);
+
+// OR - || 
+var or = dataA > 10 || dataB > 10;
+console.log(dataA + ' > ' + 10 + ' || ' + dataB + ' > ' + 10 + ' = ' + or);
+
+// NOT 
+var not = !(dataA > 10);
+console.log('!(' + dataA + ' > ' + 10 + ') = ' + not);
