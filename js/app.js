@@ -232,3 +232,43 @@ switch (age) {
         break;
 }
 
+// ***************************
+// *********** FOR ***********
+
+var products = 5;
+for (let i = 0; i < products; i++) {
+    console.log("Product: " + i);
+}
+
+// ***************************
+// ********** WHILE **********
+
+while (products > 0) {
+    console.log("Product " + products + " sold");
+    products--;
+}
+
+// ****************************
+// ********* DO WHILE *********
+
+products = 5;
+do {
+    console.log("Product " + products + " sold");
+    products--;
+}
+while (products >= 1);
+
+// ****************************
+// ***** CONTINUE - BREAK *****
+
+var account = 0;
+for (let i = 0; i <= 20; i++) {
+    if (i == 5) {
+        break;
+    }
+    if (i % 2 == 0) {
+        continue;
+    }
+    account++;
+}
+console.log("There are " + account + " odd numbers")
