@@ -77,8 +77,8 @@ console.log(dataA + ' == ' + dataB + ' = ' + equal);
 var notEqual = dataA != dataB;
 console.log(dataA + ' != ' + dataB + ' = ' + notEqual);
 
-// ******************************
-// ***** Logical Operators ******
+// *****************************
+// ***** Logical Operators *****
 
 // AND - &&
 var and = dataA > 10 && dataB > 10;
@@ -92,8 +92,8 @@ console.log(dataA + ' > ' + 10 + ' || ' + dataB + ' > ' + 10 + ' = ' + or);
 var not = !(dataA > 10);
 console.log('!(' + dataA + ' > ' + 10 + ') = ' + not);
 
-// *******************************
-// **** Assignment Operators *****
+// ******************************
+// **** Assignment Operators ****
 
 // Simple
 var equal = dataA;
@@ -119,14 +119,14 @@ var divitionEqual = 10;
 divitionEqual /= dataA;
 console.log("/= Assignation: " + divitionEqual);
 
-// *******************************
-// ***** Negative Operators ******
+// ******************************
+// ***** Negative Operators *****
 
 var dataC = -dataA;
 console.log('data A: ' + dataA + ', and his negative: ' + dataC);
 
-// ********************************
-// *** Concatenation Operators ****
+// *******************************
+// *** Concatenation Operators ***
 
 var data1 = '1';
 var data2 = '2';
@@ -150,15 +150,15 @@ console.log('Concat ' + data1 + ' and ' + data2 + ' = ' + numAsTextConcat);
 var textNumConcat = dataA + data2;
 console.log('Concat ' + dataA + ' and ' + data2 + ' = ' + textNumConcat);
 
-// ******************************
-// *** Conditional Operators ****
+// *****************************
+// *** Conditional Operators ***
 
 // Condition = ? TRUE : FALSE
 var result = dataA > dataB ? "It's greater than" : "It's not greater than";
 console.log('The conditional result: ' + result);
 
-// ******************************
-// **** Data Type Operators *****
+// *****************************
+// **** Data Type Operators ****
 
 var active = true;
 
@@ -176,3 +176,59 @@ a += b *= c /= 5;
 console.log("a = " + a);
 console.log("b = " + b);
 console.log("c = " + c);
+
+// ****************************
+// ************ IF ************
+
+if (dataA > dataB) {
+    console.log("Success");
+}
+
+// ***************************
+// ********* IF ELSE *********
+
+if (dataA > dataB) {
+    console.log(dataA + ' > ' + dataB);
+} else if (dataB == dataA) {
+    console.log(dataA + ' = ' + dataB);
+} else {
+    console.log("Error");
+}
+
+// ****************************
+// ***** NESTED STRUCTURE *****
+
+if (dataA > dataB) {
+    if (dataB == dataA) {
+        console.log(dataA + ' >= ' + dataB);
+    } else {
+        console.log(dataB + ' < ' + dataB)
+    }
+} else if (dataB < dataA) {
+    console.log(dataA + ' < ' + dataB);
+} else {
+    console.log("Error");
+}
+
+
+// **************************
+// ********* SWITCH *********
+
+var age = 30;
+switch (age) {
+    case 10:
+        console.log('Your age is 10');
+        break;
+    case 20:
+        console.log('Your age is 20');
+        break;
+    case 30:
+        console.log('Your age is 30');
+        break;
+    case 40:
+        console.log('Your age is 40');
+        break;
+    default:
+        break;
+}
+
