@@ -289,7 +289,7 @@ console.log("There are " + account + " odd numbers")
 // FUNCTIONS
 
 // *****************************
-// ****** Basic Structure ******
+// ****** BASIC STRUCTURE ******
 
 function hello_world() {
     var hi = "Hello World";
@@ -298,7 +298,7 @@ function hello_world() {
 hello_world();
 
 // **********************************
-// **** Parameters in a function ****
+// **** PARAMETERS IN A FUNCTION ****
 
 function hello(name, age) {
     var result = name + " is " + age + " old";
@@ -309,7 +309,7 @@ var message = hello("Steven", 28);
 console.log(message);
 
 // ****************************
-// ***** Init parameters ******
+// ***** INIT PARAMETERS ******
 
 function count(value = 20) {
     console.log("Total: " + value);
@@ -318,7 +318,7 @@ function count(value = 20) {
 count();
 
 // *****************************
-// ****** REST parameters ******
+// ****** REST PARAMETERS ******
 
 function cook(...ingredients) {
     console.log("Ingredients: ", ingredients)
@@ -326,7 +326,7 @@ function cook(...ingredients) {
 cook("Chicken", "Tomato", "Rice", "Beans");
 
 // ******************************
-// ***** SPREAD parameters ******
+// ***** SPREAD PARAMETERS ******
 
 function cookSpread(ingredient1, ingredient2, ingredient3, ...others) {
     console.log("Ingredient 1: ", ingredient1);
@@ -338,7 +338,7 @@ baseIngredients = ["Chicken", "Tomato"]
 cookSpread(...baseIngredients, "Sugar", "Fish", "Rice");
 
 // ******************************
-// ***** Anonymous function *****
+// ***** ANONYMOUS FUNCTION *****
 
 /*
 (
@@ -355,7 +355,7 @@ var anonymousHello = function (name) {
 }
 
 // *****************************
-// ********* Callbacks *********
+// ********* CALLBACKS *********
 
 function calculate(dataA, dataB, additionCB, substractionCB) {
     var addition = dataA + dataB;
@@ -371,7 +371,7 @@ calculate(2, 3, function (result) {
 })
 
 // **********************************************
-// **** Arrow functions | Fat Arrow | Lambda ****
+// **** ARROW FUNCTIONS | FAT ARROW | LAMBDA ****
 
 var helloArrow = name => "Hello" + name;
 console.log(helloArrow("Steven"));
@@ -394,16 +394,96 @@ var validateArrow = () => {
 console.log(validateArrow());
 
 // *****************************
-// ******* Operator this *******
+// ******* OPERATOR THIS *******
 
-const button = document.querySelector('.button');
+const buttonThisOperator = document.querySelector('.button');
 
-/*button.addEventListener('click', function () {
+/*buttonThisOperator.addEventListener('click', function () {
     //console.log('Push button');
     console.log(this.innerHTML);
 })*/
 
-button.addEventListener('click', () => {
+buttonThisOperator.addEventListener('click', () => {
     console.log(this);
     this.location = "http://www.google.com";
 });
+
+// ----------------------------------------- . -----------------------------------------
+// EVENTS
+
+// ****************************
+// ******* MOUSE EVENTS *******
+
+const buttonMouseEvent = document.querySelector(".button");
+
+buttonMouseEvent.addEventListenerI("click", function () {
+    console.log("You push the button");
+});
+
+buttonMouseEvent.addEventListenerI("mouseover", function () {
+    console.log("The mouse is over the button");
+});
+
+buttonMouseEvent.addEventListenerI("mouseout", function () {
+    console.log("The mouse is out the button");
+});
+
+// *****************************
+// ****** KEYBOARD EVENTS ******
+
+window.addEventListener("keydown", function (event) {
+    console.log("keydow");
+    console.log(String.fromCharCode(event.keyCode));
+});
+
+window.addEventListener("keypress", function (event) {
+    console.log("keypress");
+});
+
+window.addEventListener("keyup", function (event) {
+    console.log("keyup");
+});
+
+// *****************************
+// ******* LOAD DOCUMENT *******
+
+window.addEventListener("load", function () {
+    console.log("The document have been loaded");
+});
+
+// *****************************
+// ***** MULTIMEDIA EVENTS *****
+
+const videoEvent = document.querySelector('.eventVideo');
+
+videoEvent.addEventListener("play", function () {
+    console.log("Init video");
+});
+
+videoEvent.addEventListener("seeking", function () {
+    console.log("Finding in the video ", this.currentTime);
+});
+
+videoEvent.addEventListener("ended", function () {
+    console.log("End video");
+});
+
+// ****************************
+// ********** TIMERS **********
+
+/*var timer = setInterval(function () {
+    setColor();
+}, 2000);*/
+
+setTimeout(function () {
+    setColor();
+}, 3000);
+
+function setColor() {
+    var page = document.body;
+    page.style.backgroundColor = page.style.backgroundColor == "blue" ? "green" : "blue";
+}
+
+function stopChangeColor() {
+    clearInterval(timer);
+}
