@@ -1,5 +1,8 @@
 "use strict"
 
+// ----------------------------------------- . -----------------------------------------
+// VARIABLES AND DATA CONTAINERS - DATA TYPES
+
 // JSON => Javascript Object Notation
 var person = { name: 'Figueroa', email: 'figueroa@email.com' };
 
@@ -14,8 +17,11 @@ var peopleJSON = JSON.stringify(person);
 var newPeople = JSON.parse(peopleJSON);
 var x = false;
 
+// ----------------------------------------- . -----------------------------------------
+// OPERATORS
+
 // ******************************
-// **** Arithmetic Operators ****
+// **** ARITHMETIC OPERATORS ****
 
 var dataA = 10;
 var dataB = 20;
@@ -51,7 +57,7 @@ decrement--;
 console.log('The decrement -- of ' + dataA + ' = ' + decrement);
 
 // ******************************
-// **** Relational Operators ****
+// **** RELATIONAL OPERATORS ****
 
 // Greater than >
 var greaterThan = dataA > dataB;
@@ -78,7 +84,7 @@ var notEqual = dataA != dataB;
 console.log(dataA + ' != ' + dataB + ' = ' + notEqual);
 
 // *****************************
-// ***** Logical Operators *****
+// ***** LOGICAL OPERATORS *****
 
 // AND - &&
 var and = dataA > 10 && dataB > 10;
@@ -93,7 +99,7 @@ var not = !(dataA > 10);
 console.log('!(' + dataA + ' > ' + 10 + ') = ' + not);
 
 // ******************************
-// **** Assignment Operators ****
+// **** ASSIGNMENT OPERATORS ****
 
 // Simple
 var equal = dataA;
@@ -120,13 +126,13 @@ divitionEqual /= dataA;
 console.log("/= Assignation: " + divitionEqual);
 
 // ******************************
-// ***** Negative Operators *****
+// ***** NEGATIVE OPERATORS *****
 
 var dataC = -dataA;
 console.log('data A: ' + dataA + ', and his negative: ' + dataC);
 
 // *******************************
-// *** Concatenation Operators ***
+// *** CONCATENATION OPERATORS ***
 
 var data1 = '1';
 var data2 = '2';
@@ -151,14 +157,14 @@ var textNumConcat = dataA + data2;
 console.log('Concat ' + dataA + ' and ' + data2 + ' = ' + textNumConcat);
 
 // *****************************
-// *** Conditional Operators ***
+// *** CONDITIONAL OPERATORS ***
 
 // Condition = ? TRUE : FALSE
 var result = dataA > dataB ? "It's greater than" : "It's not greater than";
 console.log('The conditional result: ' + result);
 
 // *****************************
-// **** Data Type Operators ****
+// **** DATA TYPE OPERATORS ****
 
 var active = true;
 
@@ -176,6 +182,9 @@ a += b *= c /= 5;
 console.log("a = " + a);
 console.log("b = " + b);
 console.log("c = " + c);
+
+// ----------------------------------------- . -----------------------------------------
+// CONDITIONS OR DETITIONS
 
 // ****************************
 // ************ IF ************
@@ -232,6 +241,9 @@ switch (age) {
         break;
 }
 
+// ----------------------------------------- . -----------------------------------------
+// LOOPS
+
 // ***************************
 // *********** FOR ***********
 
@@ -272,3 +284,126 @@ for (let i = 0; i <= 20; i++) {
     account++;
 }
 console.log("There are " + account + " odd numbers")
+
+// ----------------------------------------- . -----------------------------------------
+// FUNCTIONS
+
+// *****************************
+// ****** Basic Structure ******
+
+function hello_world() {
+    var hi = "Hello World";
+}
+
+hello_world();
+
+// **********************************
+// **** Parameters in a function ****
+
+function hello(name, age) {
+    var result = name + " is " + age + " old";
+    return result;
+}
+
+var message = hello("Steven", 28);
+console.log(message);
+
+// ****************************
+// ***** Init parameters ******
+
+function count(value = 20) {
+    console.log("Total: " + value);
+}
+
+count();
+
+// *****************************
+// ****** REST parameters ******
+
+function cook(...ingredients) {
+    console.log("Ingredients: ", ingredients)
+}
+cook("Chicken", "Tomato", "Rice", "Beans");
+
+// ******************************
+// ***** SPREAD parameters ******
+
+function cookSpread(ingredient1, ingredient2, ingredient3, ...others) {
+    console.log("Ingredient 1: ", ingredient1);
+    console.log("Ingredient 2: ", ingredient2);
+    console.log("Ingredient 3: ", ingredient3);
+    console.log("Others: ", others);
+}
+baseIngredients = ["Chicken", "Tomato"]
+cookSpread(...baseIngredients, "Sugar", "Fish", "Rice");
+
+// ******************************
+// ***** Anonymous function *****
+
+/*
+(
+    function(){
+        var message = "Hello World again";
+        console.log(message);
+    }
+)()
+*/
+
+var anonymousHello = function (name) {
+    var message = "Hello " + name;
+    return message;
+}
+
+// *****************************
+// ********* Callbacks *********
+
+function calculate(dataA, dataB, additionCB, substractionCB) {
+    var addition = dataA + dataB;
+    var substraction = dataA - dataB;
+    additionCB(addition);
+    substractionCB(substraction);
+}
+
+calculate(2, 3, function (result) {
+    console.log('Addition', result);
+}, function (result) {
+    console.log('Substraction', result);
+})
+
+// **********************************************
+// **** Arrow functions | Fat Arrow | Lambda ****
+
+var helloArrow = name => "Hello" + name;
+console.log(helloArrow("Steven"));
+
+var additionArrow = amount => amount + 10
+console.log(additionArrow(10));
+
+var calculateArrow = (dataA, dataB) => dataA + dataB
+console.log(calculateArrow(10, 15));
+
+var generateArrow = (dataA, dataB) => {
+    var dataC = 5;
+    return dataA + dataB + dataC;
+}
+console.log(generateArrow(10, 15));
+
+var validateArrow = () => {
+    return "Correct";
+}
+console.log(validateArrow());
+
+// *****************************
+// ******* Operator this *******
+
+const button = document.querySelector('.button');
+
+/*button.addEventListener('click', function () {
+    //console.log('Push button');
+    console.log(this.innerHTML);
+})*/
+
+button.addEventListener('click', () => {
+    console.log(this);
+    this.location = "http://www.google.com";
+});
