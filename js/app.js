@@ -529,3 +529,37 @@ videoData.addEventListener("ended", function () {
         console.log(email);
     }
 });
+
+// ----------------------------------------- . -----------------------------------------
+// NUMBERS
+
+// *****************************
+// ***** NUMBER PROPERTIES *****
+
+console.log("MAX_VALUE", Number.MAX_VALUE);
+console.log("MIN_VALUE", Number.MIN_VALUE);
+console.log("NEGATIVE_INFINITY", Number.NEGATIVE_INFINITY);
+console.log("POSITIVE_INFINITY", Number.POSITIVE_INFINITY);
+console.log("NaN", Number.NaN);
+
+// *****************************
+// ****** NUMBER METHODS ******
+
+var numberMethods = "10.30";
+
+console.log("Number: ", typeof numberMethods, typeof Number(numberMethods));
+console.log("parseInt: ", parseInt(numberMethods));
+console.log("parseFloat: ", Number.parseFloat(numberMethods));
+console.log("isNan", isNaN(numberMethods));
+console.log("isInteger", Number.isInteger(numberMethods));
+
+// *****************************
+// ****** INSTANCE METHOD ******
+
+var numberInstance = 2.5
+
+console.log("toExponential: ", numberInstance.toExponential());
+console.log("toFixed: ", numberInstance.toFixed(4));
+console.log("toPrecision: ", numberInstance.toPrecision(2));
+console.log("toString: ", numberInstance.toString());
+
