@@ -563,3 +563,115 @@ console.log("toFixed: ", numberInstance.toFixed(4));
 console.log("toPrecision: ", numberInstance.toPrecision(2));
 console.log("toString: ", numberInstance.toString());
 
+// ----------------------------------------- . -----------------------------------------
+// STRINGS
+
+// ******************************
+// ****** CREATING STRINGS ******
+
+var country = "Ecuador";
+var food = new String("Pizza");
+
+// ******************************
+// *********** LENGTH ***********
+
+var messageString = "Hi this is a test";
+console.log("The string has " + messageString.length + " characters");
+
+// ****************************
+// ***** TEXT SEARCH - P1 *****
+
+var messageSearch = "Learning javascript is interesting. I like javascript";
+var resutl;
+
+// indexOf -> get the position where it finds the text
+result = messageSearch.indexOf("javascript");
+
+// lastIndexOf -> get the last position where it finds the text
+result = messageSearch.lastIndexOf("javascript");
+
+// search -> get the position where it finds the text
+result = messageSearch.search("javascript");
+
+// search | Regular expression -> get the position where it finds the expression
+result = messageSearch.search(/ja/i); // i -> in case sensitive 
+
+// ****************************
+// ***** TEXT SEARCH - P2 *****
+
+// match -> Returns an array with the regular expression 
+result = messageSearch.match(/learning/gi); //get all the results
+
+// substr -> Cut the string with the position. The second parameter starts in the finish of the first parameter
+result = messageSearch.substr(6, 11);
+
+// substring -> Similar to substr, but the second parameter starts at the begining of the string
+result = messageSearch.substring(6, 11);
+
+// charAt -> Get the character at the position of the parameter (starts in 0)
+result = messageSearch.charAt(3);
+
+// ****************************
+// ***** TEXT SEARCH - P3 *****
+
+// startsWith 
+result = messageSearch.startsWith("ja");
+result = messageSearch.startsWith("ja", 5); // the second parameter specify where start the method
+
+// endsWith 
+result = messageSearch.endsWith("ja");
+
+// includes
+result = messageSearch.includes("ja");
+
+// *********************************
+// GENERATION - REPLACE - SEPARATION 
+
+// repeat
+result = messageSearch.repeat(4);
+
+// replace
+result = messageSearch.replace("javascript, python");
+
+// slice
+result = messageSearch.slice(6);
+result = messageSearch.slice(6, messageString.length - 5);
+
+// split -> Separate the string into array
+result = messageSearch.split("-");
+
+// trim -> detele blankspaces at the begining and at the end of the string
+result = messageSearch.trim();
+
+// ****************************
+// ** TRANSFORMATION METHODS **
+
+// toString
+var total = 12356
+result = total.toString();
+
+// toLowerCase
+result = messageSearch.toLowerCase();
+
+// toUpperCase
+result = messageSearch.toUpperCase();
+
+// concat
+var messageSearch2 = ". I know another things";
+result = messageSearch.concat(messageSearch2, "123", "456");
+
+// ****************************
+// ** TEMPLATES METHODS **
+
+var languageString = "javascript";
+var languageString2 = "python";
+var messageString = `I like this languages: ${languageString} - ${languageString2}`
+console.log(messageString);
+
+// multiline message
+var multilineMessage = `
+    Hello world,
+    I'm learning:
+    ${languageString} - ${languageString2}
+    and it's funny
+`
