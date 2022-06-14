@@ -487,3 +487,45 @@ function setColor() {
 function stopChangeColor() {
     clearInterval(timer);
 }
+
+// ----------------------------------------- . -----------------------------------------
+// ALERT WINDOWS
+
+// ****************************
+// ******* ALERT WINDOW *******
+
+const videoAlert = document.querySelector('.buttonVideo');
+
+videoAlert.addEventListener("ended", function () {
+    alert("Message\nVideo finished");
+});
+
+// *****************************
+// **** CONFIRMATION WINDOW ****
+
+const videoConfirmation = document.querySelector('.buttonVideo');
+
+videoConfirmation.addEventListener("ended", function () {
+    let result = confirm("Do you want to watch again?");
+    console.log(result);
+    if (result) {
+        videoAlert.play();
+    } else {
+        window.location = "http://www.google.com";
+    }
+});
+
+// *****************************
+// ******** DATA WINDOW ********
+
+const videoData = document.querySelector('.buttonVideo');
+
+videoData.addEventListener("ended", function () {
+    let email = prompt("Email: ", "example@example.com");
+
+    if (email == null || email == "") {
+        console.log("No data");
+    } else {
+        console.log(email);
+    }
+});
