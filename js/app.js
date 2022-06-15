@@ -675,3 +675,4 @@ var multilineMessage = `
     ${languageString} - ${languageString2}
     and it's funny
 `
+console.log(multilineMessage);
