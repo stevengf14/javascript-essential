@@ -782,3 +782,61 @@ console.log(plate1, plate2, plate3);
 // Option 3
 var [plate1, plate2, plate3] = plates;
 console.log(plate1, plate2, plate3);
+
+// ----------------------------------------- . -----------------------------------------
+// FINDING IN ARRAYS
+
+// *****************************
+// ************ FOR ************
+
+plates = ["pizza", "pasta", "tacos"];
+
+for (let plate in plates) {
+    console.log(plate);
+}
+
+// *****************************
+// ********** FOREACH **********
+
+plates.forEach(plate => {
+    console.log(plate);
+});
+
+plates.forEach((plate, index) => {
+    console.log(index, plate);
+});
+
+// ****************************
+// *********** FIND ***********
+
+var plateSelected = plates.find(plate => plate === "pizza");
+console.log(plateSelected);
+
+var menuArray = [
+    { name: "Pizza", price: 10, country: "Italy" },
+    { name: "Paella", price: 20, country: "Spain" },
+    { name: "Tacos", price: 5, country: "Mexico" },
+    { name: "Burritos", price: 5, country: "Mexico" }
+];
+
+plateSelected = plates.find(plate => plate.name === "Pizza");
+console.log(plateSelected);
+
+// *****************************
+// ****** FIND WITH INDEX ******
+
+var numPlate = plates.findIndex(plate => plate === "Pizza");
+var numMenu = menuArray.findIndex(plate => plate.name === "Pizza");
+console.log("Plate number: ", numPlate, numMenu);
+
+// ******************************
+// ****** FILTERING ARRAYS ******
+
+var resultMenu = menuArray.filter(plate => plate.country === "Mexico");
+console.log(resultMenu);
+
+// *****************************
+// ****** VALIDATE ARRAYS ******
+
+resultMenu = menuArray.some(plate => plate.price < 20);
+console.log("Is there plates < 20", resultMenu);
