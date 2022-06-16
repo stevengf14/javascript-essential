@@ -660,8 +660,8 @@ result = messageSearch.toUpperCase();
 var messageSearch2 = ". I know another things";
 result = messageSearch.concat(messageSearch2, "123", "456");
 
-// ****************************
-// ** TEMPLATES METHODS **
+// *****************************
+// ***** TEMPLATES METHODS *****
 
 var languageString = "javascript";
 var languageString2 = "python";
@@ -676,3 +676,109 @@ var multilineMessage = `
     and it's funny
 `
 console.log(multilineMessage);
+
+// ----------------------------------------- . -----------------------------------------
+// ARRAYS
+
+// *****************************
+// ***** TEMPLATES METHODS *****
+
+var plates = ["pizza", "pasta", "rice"];
+
+var drinks = new Array("soda", "water", "wine");
+
+console.log(Array.isArray(plates), plates, drinks);
+
+// ****************************
+// ********** LENGTH **********
+
+console.log(`There are ${plates.length} plates on the menu`);
+
+var plate = plates[1];
+
+console.log("The plate is ", plate);
+
+// *****************************
+// ** MULTIDIMENTIONAL ARRAYS **
+
+var menu = [plates, drinks];
+
+console.log(menu, menu[0][2]);
+
+// ****************************
+// ***** BASIC OPERATIONS *****
+
+// push -> add element
+
+plates.push("chicken");
+console.log(plates);
+
+// pop -> extract the last element
+
+plates.pop(plates);
+console.log(plates);
+
+// join -> concat the elemnts into array
+
+var messageArray = plates.join();
+console.log(messageArray);
+
+// ****************************
+// ***** OTHER OPERATIONS *****
+
+var messageArrayOperations = "pizza, rice, pasta";
+
+// split -> separate string into array
+
+plates = messageArrayOperations.split(", ");
+console.log(plates);
+
+// from -> take array from html
+
+var platesHTML = Array.from(document.querySelectorAll(".plates p"));
+plates = platesHTML.map(plate => plate.textContent);
+
+// off -> convert into array
+
+plates = Array.of("pizza", "rice", "pasta");
+console.log(plates);
+
+// ****************************
+// *********** SORT ***********
+
+plates.sort();
+console.log(plates);
+
+// reverse -> the order
+plates.reverse();
+console.log(plates);
+
+plates.reverse();
+console.log(plates);
+
+// *****************************
+// ******* DESTRUCTURING *******
+
+/*
+// Option 1
+
+var plate1 = plates[0];
+var plate2 = plates[1];
+var plate3 = plates[2];
+
+console.log(plate1, plate2, plate3);
+*/
+
+/*
+// Option 2
+var plate1 = null;
+var plate2 = null;
+var plate3 = null;
+
+[plate1, plate2, plate3] = plates;
+console.log(plate1, plate2, plate3);
+*/
+
+// Option 3
+var [plate1, plate2, plate3] = plates;
+console.log(plate1, plate2, plate3);
