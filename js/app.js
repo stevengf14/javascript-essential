@@ -840,3 +840,61 @@ console.log(resultMenu);
 
 resultMenu = menuArray.some(plate => plate.price < 20);
 console.log("Is there plates < 20", resultMenu);
+
+// ----------------------------------------- . -----------------------------------------
+// DOM AND BOM
+
+// *******************************
+// ** UNDERSTANDING DOM AND BOM **
+
+var buttonDOM = document.getElementById("button");
+
+buttonDOM.addEventListener("click", function () {
+    console.log(window.location.href);
+    window.location.href = "http://github.com";
+});
+
+// ********************************
+// ** DOM PROPERTIES AND METHODS **
+
+var allParagraphs = document.getElementById("p");
+var paragraphsByClass = document.getElementsByClassName("principal")[0].textContent;
+var picture = document.createElement("img");
+picture.src = "picture1.jpg";
+picture.name = "picture1";
+picture.width = 400;
+document.body.appendChild(picture);
+
+
+buttonDOM.addEventListener("click", function () {
+    console.log(allParagraphs);
+    // console.log(paragraphsByClass);
+    buttonDOM.style.backgroundColor = "green";
+    buttonDOM.style.width = "200px"
+});
+
+picture.addEventListener("click", function () {
+    if (this.name === "picture1") {
+        this.src = "picture2.jpg";
+        this.name = "picture2";
+    } else {
+        this.src = "picture1.jpg";
+        this.name = "picture1";
+    }
+});
+
+// ********************************
+// ** BOM PROPERTIES AND METHODS **
+
+var principalBOM = document.getElementsByClassName("principal")[0];
+console.log("innerHeight: ", window.innerHeight);
+console.log("innerWidth: ", window.innerWidth);
+localStorage.setItem("content", "Coding and Coffee is good");
+
+buttonDOM.addEventListener("mouseover", function () {
+    var contentBOM = this.localStorage.getItem("content");
+    principalBOM.innerHTML = contentBOM;
+    window.history.forward();
+    window.history.back();
+    window.history.go(3);
+});
