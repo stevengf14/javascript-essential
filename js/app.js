@@ -898,3 +898,81 @@ buttonDOM.addEventListener("mouseover", function () {
     window.history.back();
     window.history.go(3);
 });
+
+// ----------------------------------------- . -----------------------------------------
+// REMOTE DATA
+
+// *****************************
+// *********** FETCH ***********
+
+var buttonFetch = document.getElementById("button");
+var containerFetch = document.getElementById("container");
+var posts = null;
+
+buttonFetch.addEventListener("click", function () {
+    fetch("http://jsonplaceholder.typicode.com/posts")
+        .then(data => data.json())
+        .then(data => {
+            posts = data;
+            showData(posts);
+        });
+});
+
+function showData(posts) {
+    posts.map((post, i) => {
+        let title = document.createElement("h1");
+        let content = document.createElement("p");
+
+        title.innerHTML = (i + 1) + " - " + post.title;
+        content.innerHTML = post.body;
+
+        containerFetch.appendChild(title);
+        containerFetch.appendChild(content);
+    });
+}
+
+// ******************************
+// ********** PROMISES **********
+// *********** ERRORS ***********
+
+var buttonPromise = document.getElementById("button");
+var containerPromise = document.getElementById("container");
+var contFlags = document.getElementById("flags");
+var messagesError = document.getElementById("messages");
+
+buttonPromise.addEventListener("click", function () {
+    getPosts()
+        .then(data => data.json())
+        .then(posts => {
+            showData(posts);
+            return getCountries();
+        })
+        .then(data => data.json())
+        .then(countries => {
+            showFlags(countries);
+        })
+        .catch(error => {
+            messagesError.classList.toggle("hide");
+            messagesError.innerHTML = error;
+            setTimeout(() => messagesError.classList.toggle("hide"), 3000);
+        });
+});
+
+function getPosts() {
+    return fetch("http://jsonplaceholder.typicode.com/posts");
+}
+
+function getCountries() {
+    return fetch("http://restcountries.eu/rest/v2/all");
+}
+
+function showFlags(countries) {
+    contFlags.innerHTML = "";
+    countries.map((country, i) => {
+        let flag = document.getElementById("img");
+        flag.src = country.flag;
+        flag.width = "20";
+        flag.height = "20";
+        contFlags.appendChild(flag);
+    });
+}
