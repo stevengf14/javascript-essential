@@ -976,3 +976,87 @@ function showFlags(countries) {
         contFlags.appendChild(flag);
     });
 }
+
+// ----------------------------------------- . -----------------------------------------
+// OOP
+
+// *****************************
+// ********** CLASSES **********
+// ********** METHODS **********
+// ******** INHERITANCE ********
+
+
+// Using classes
+
+class Product {
+    constructor(serialNumber) {
+        this.serialNumber = serialNumber;
+        this.warrantyTime = warrantyTime;
+    }
+
+    static get infoShop() {
+        console.log(`Products of the Steven Shop`);
+    }
+
+    set warranty(value) {
+        this.warrantyTime -= value;
+    }
+
+    get warranty() {
+        return this.warrantyTime;
+    }
+}
+
+class Screen extends Product {
+    constructor(serialNumber, brand, model, size) {
+        super(serialNumber);
+        this.brand = brand;
+        this.model = model;
+        this.size = size;
+    }
+
+    on() {
+        this.warranty = 1;
+        console.log(`Screen ${this.brand} turned on`);
+    }
+
+    volume() {
+        console.log(`Volume modified`);
+    }
+    info() {
+        console.log(`Screen ${this.brand} with model ${this.model} with size ${this.size}`);
+    }
+
+    set weight(value) {
+        this.kgs = value.trim();
+    }
+
+    get weight() {
+        return this.kgs;
+    }
+}
+
+/*
+// Old Way - with no classes
+
+function Screen(brand, model, size) {
+    this.brand = brand;
+    this.model = model;
+    this.size = size;
+}
+
+Screen.prototype.on = function () {
+    console.log(`Screen ${this.brand} turned on`);
+}
+
+Screen.prototype.volume = function () {
+    console.log(`Volume modified`);
+}
+
+Screen.prototype.info = function () {
+    console.log(`Screen ${this.brand} with model ${this.model} with size ${this.size}`);
+}
+*/
+
+const tv1 = new Screen("13578 ", "Samsung", "Oasis", 55);
+const tv2 = new Screen("24680", "TCL", "Artemis", 80);
