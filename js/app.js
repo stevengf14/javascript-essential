@@ -1060,3 +1060,48 @@ Screen.prototype.info = function () {
 
 const tv1 = new Screen("13578 ", "Samsung", "Oasis", 55);
 const tv2 = new Screen("24680", "TCL", "Artemis", 80);
+
+// ----------------------------------------- . -----------------------------------------
+// ERRORS
+
+// *****************************
+// ***** ERRORS MANAGEMENT *****
+
+try {
+    // var arrayErrors = new Array(100000000000000);
+    // var x = y;
+    decodeURIComponent("http://%ominio.com");
+} catch (error) {
+    console.log(error.message);
+    console.log(error.name);
+}
+
+// ******************************
+// *** ERRORS PERSONALIZATION ***
+
+var value1 = 100;
+var value2 = 200;
+
+try {
+    if (value1 > value2) {
+        console.log(`Validation: ${value1} > ${value2}`);
+    } else {
+        throw new Error(`Error: ${value1} < ${value2} :(`);
+    }
+} catch (error) {
+    console.log(error);
+}
+
+// ******************************
+// ********** DEBUGGER **********
+
+// you just have to write "debugger;" in the line that you need to stop de running code
+
+function example() {
+    var x;
+    x = 10;
+    while (x > 0) {
+        debugger;
+        x--;
+    }
+}
